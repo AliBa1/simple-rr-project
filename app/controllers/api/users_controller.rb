@@ -1,9 +1,9 @@
 class Api::UsersController < ApiController
   include RESTFramework::ModelControllerMixin
 
-  self.fields = {exclude: [:created_at, :updated_at, :movies]}
+  self.fields = { exclude: [ :created_at, :updated_at, :movies ] }
 
   def get_recordset
-    return User.all()
+    User.all()
   end
 end

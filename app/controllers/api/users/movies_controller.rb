@@ -1,8 +1,8 @@
 class Api::Users::MoviesController < Api::UsersController
   include RESTFramework::BulkModelControllerMixin
-  self.fields = {exclude: [:users, :created_at, :updated_at]}
+  self.fields = { exclude: [ :users, :created_at, :updated_at ] }
 
   def get_recordset
-    return User.find(params[:user_id]).movies
+    User.find(params[:user_id]).movies
   end
 end
